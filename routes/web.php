@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/home', 'Controller@index');
+
+Route::get('/project/showall', 'ProjectController@showall');
