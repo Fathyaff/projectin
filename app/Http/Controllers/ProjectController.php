@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Projects;
+use App\Candidates;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -53,6 +54,12 @@ class ProjectController extends Controller
 	
 	public function chooseProject($id)
 	{
+		$candidates= new Candidates;
+		$candidates->id_project = $id;
+		$candidates->id_user = '25';
+		$candidates->status = 'Applied';
+		$candidates->save();
+		dd(compact('candidates'));
 		
 		return redirect('/project/showall');
 	}
