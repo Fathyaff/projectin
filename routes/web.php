@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('/home', 'Controller@index');
 
-Route::get('/project/showall', 'ProjectController@showall');
+Route::get('/project/showall/{param}', 'ProjectController@showall');
+Route::get('/users/showall/{param}', 'UsersController@showall');
 
-Route::get('/project/showall/{id}', 'ProjectController@chooseProject');
+// Route::get('/project/showall/{id}', 'ProjectController@chooseProject');

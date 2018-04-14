@@ -44,5 +44,11 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
+    <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script>
+        // $('#tableAllProject').DataTable();
+    </script>
+    <script src="js/modal.js"></script>
+
     </body>
 </html>

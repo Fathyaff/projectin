@@ -58,13 +58,26 @@
         <div class="container text-center">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
+              <h2 class="text-secondary text-uppercase mb-0">Expert Engineer List</h2>
               <hr class="star-dark mb-5">
-
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
+              <div>
+                <table id="tableAllExpertEngineer" class="table table-hover">
+                <thead>
+                <tr class="text-center">
+                      <td width="80">Nama</td>  
+                      <td width="100">Universitas</td>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                </table>
+            </div>
+              
+              <div class="col-md-3 mx-auto">
+              <a class="text-center btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+                  <i class="fa fa-close"></i>
+                  Close Project</a>
+              </div>
             </div>
           </div>
         </div>
@@ -80,13 +93,25 @@
         <div class="container text-center">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
+              <h2 class="text-secondary text-uppercase mb-0">Average Engineer List</h2>
               <hr class="star-dark mb-5">
-              
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
+              <div>
+                  <table id="tableAllAverageEngineer" class="table table-hover">
+                  <thead>
+                  <tr class="text-center">
+                      <td width="80">Nama</td>  
+                      <td width="100">Universitas</td>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                  </table>
+              </div>
+              <div class="col-md-3 mx-auto">
+              <a class="text-center btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+                  <i class="fa fa-close"></i>
+                  Close Project</a>
+              </div>
             </div>
           </div>
         </div>
@@ -102,13 +127,25 @@
         <div class="container text-center">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
+              <h2 class="text-secondary text-uppercase mb-0">Beginner Engineer List</h2>
               <hr class="star-dark mb-5">
-              
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
+              <div>
+                <table id="tableAllBeginnerEngineer" class="table table-hover">
+                <thead>
+                <tr class="text-center">
+                      <td width="80">Nama</td>  
+                      <td width="100">Universitas</td>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                </table>
+              </div>
+              <div class="col-md-3 mx-auto">
+              <a class="text-center btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+                  <i class="fa fa-close"></i>
+                  Close Project</a>
+              </div>
             </div>
           </div>
         </div>

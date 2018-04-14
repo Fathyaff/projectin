@@ -57,44 +57,32 @@
         <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
           <i class="fa fa-3x fa-times"></i>
         </a>
-        <div class="container text-center">
+        <div class="container ">
           <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
+            <div class="col-lg-11 mx-auto">
+              <h2 class="text-secondary text-uppercase mb-0 text-center">Big Project List</h2>
               <hr class="star-dark mb-5">
               <div>
-                <table id="tableAllProject">
-                    <thead>
-                        <tr>
-                            <td>Nama Project</td>  
-                            <td>Deskripsi</td>
-                            <td>Fitur</td>  
-                            <td>Durasi</td>  
-                            <td>Harga</td>
-                            <td>Pilih</td>  
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($projects as $project)
-                        <tr>
-                            <td>{{ $project->nama }}</td> <!-- Nama -->
-                            <td>{{ $project->deskripsi }}</td> <!-- Deskripsi -->
-                            <td> <!-- List Fitur -->
-                            @foreach ($project->listFitur as $fitur)
-                                <li>{{ $fitur->nama_fitur }}</li>
-                            @endforeach
-                            </td> 
-                            <td>{{ $project->duration }} Bulan</td> <!-- Durasi -->
-                            <td>{{ $project->min_harga }} - {{ $project->max_harga }}</td> <!-- Harga -->
-                            <td><button>Apply</button></td> <!-- Harga -->
-                        </tr>
-                        @endforeach
-                    </tbody>
+                <table id="tableAllBigProject" class="table table-hover">
+                <thead>
+                <tr class="text-center">
+                    <td width="80">Nama Project</td>  
+                    <td width="100">Deskripsi</td>
+                    <td width="80">Fitur</td>  
+                    <td width="100">Durasi</td>  
+                    <td width="80">Harga</td>
+                    <td width="80">Pilih</td>  
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
                 </table>
             </div>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
+            <div class="col-md-3 mx-auto">
+              <a class="text-center btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+                  <i class="fa fa-close"></i>
+                  Close Project</a>
+            </div>
             </div>
           </div>
         </div>
@@ -107,16 +95,32 @@
         <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
           <i class="fa fa-3x fa-times"></i>
         </a>
-        <div class="container text-center">
+        <div class="container">
           <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
+            <div class="col-lg-11 mx-auto">
+              <h2 class="text-secondary text-uppercase mb-0 text-center">Medium Project List</h2>
               <hr class="star-dark mb-5">
-              
-              
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
+              <div>
+                <table id="tableAllMediumProject" class="table table-hover">
+                <thead>
+                <tr class="text-center">
+                    <td width="80">Nama Project</td>  
+                    <td width="100">Deskripsi</td>
+                    <td width="80">Fitur</td>  
+                    <td width="100">Durasi</td>  
+                    <td width="80">Harga</td>
+                    <td width="80">Pilih</td>  
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                </table>
+              </div>
+              <div class="col-md-3 mx-auto">
+              <a class="text-center btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+                  <i class="fa fa-close"></i>
+                  Close Project</a>
+            </div>
             </div>
           </div>
         </div>
@@ -129,24 +133,38 @@
         <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
           <i class="fa fa-3x fa-times"></i>
         </a>
-        <div class="container text-center">
+        <div class="container">
           <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
+            <div class="col-lg-11 mx-auto">
+              <h2 class="text-secondary text-uppercase mb-0 text-center">Small Project List</h2>
               <hr class="star-dark mb-5">
-              
-             
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
+              <div>
+                <table id="tableAllSmallProject" class="table table-hover">
+                <thead>
+                <tr class="text-center">
+                    <td width="80">Nama Project</td>  
+                    <td width="100">Deskripsi</td>
+                    <td width="80">Fitur</td>  
+                    <td width="100">Durasi</td>  
+                    <td width="80">Harga</td>
+                    <td width="80">Pilih</td>  
+                </tr>
+                </thead>
+                <tbody>
+                   
+                </tbody>
+                </table>
+              </div>
+              <div class="col-md-3 mx-auto">
+              <a class="text-center btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+                  <i class="fa fa-close"></i>
+                  Close Project</a>
+            </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-
-
 
     @yield('engineer-list')
 @endsection  

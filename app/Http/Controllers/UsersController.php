@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Projects;
-use App\Candidates;
+use App\Users;
 use Illuminate\Http\Request;
 
-class ProjectController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -46,23 +45,11 @@ class ProjectController extends Controller
      */
     public function showall($param)
     {
-        $projects = Projects::where('jenis', $param)->get();
+        $engineers = Users::where('role', 'Mahasiswa')->get();
         // return view('welcome.projectlist')->with(compact('projects'));
-        return response()->json($projects);
+        return response()->json($engineers);
         // return Datatables::of($projects);
     }
-
-	public function chooseProject($id)
-	{
-		$candidates= new Candidates;
-		$candidates->id_project = $id;
-		$candidates->id_user = '25';
-		$candidates->status = 'Applied';
-		$candidates->save();
-		dd(compact('candidates'));
-		
-		return redirect('/project/showall');
-	}
 
     /**
      * Display the specified resource.
