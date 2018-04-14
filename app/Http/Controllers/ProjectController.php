@@ -51,6 +51,12 @@ class ProjectController extends Controller
             'projects' => $allProjects
         ]);
     }
+	
+	public function chooseProject($id)
+	{
+		
+		return redirect('/project/showall');
+	}
 
     /**
      * Display the specified resource.
