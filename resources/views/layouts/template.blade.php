@@ -17,7 +17,7 @@
     <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
+    <link rel="icon" href="img/icon.png">
     <!-- Plugin CSS -->
     <link href="plugins/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
@@ -28,7 +28,9 @@
 
   <body id="page-top">
     @yield('header')
+    @yield('headerhome')
     @yield('landingpage')
+    
 
       <!-- Bootstrap core JavaScript -->
     <script src="plugins/jquery/jquery.min.js"></script>

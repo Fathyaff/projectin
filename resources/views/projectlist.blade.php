@@ -6,7 +6,7 @@
         <div class="row">
             <h2 class="col-md-8 text-right text-uppercase text-secondary mb-0">Project List</h2>
             <div class="col-md-4 text-right">
-                <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+                <a class="btn btn-primary btn-lg rounded-pill" href="/create-project">
                 <i class="fa fa-plus"></i> Create a Project</a>
             </div>
         </div> 

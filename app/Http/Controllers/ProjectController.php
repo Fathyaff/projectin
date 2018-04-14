@@ -53,15 +53,8 @@ class ProjectController extends Controller
         return response()->json($projects);
         // return Datatables::of($projects);
     }
-<<<<<<< HEAD
-
-=======
     
-    /**
-     * Insert data into table candidates
-     */
->>>>>>> 289364cfa5787cfabbe59001b2d0199ec7d502a4
-	public function chooseProject($id)
+    public function chooseProject($id)
 	{
 		$candidates= new Candidates;
 		$candidates->id_project = $id;

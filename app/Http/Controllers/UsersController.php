@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class UsersController extends Controller
 {
@@ -22,9 +23,17 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createengineer(Request $request)
     {
         //
+        $join_us = new Users;
+        $join_us->nama = Input::get('name');
+        $join_us->email = Input::get('email');
+        $join_us->univ = Input::get('univ');
+        $join_us->role = 'Mahasiswa';
+        $join_us->save();
+
+        return redirect('/#portfolio');
     }
 
     /**

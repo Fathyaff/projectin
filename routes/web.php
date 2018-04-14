@@ -15,15 +15,16 @@ Route::get('/', function () {
     return view('footer');
 });
 
+Route::get('/create-project', function () {
+    return view('createproject');
+});
+Route::get('/join-us', function () {
+    return view('joinus');
+});
+
 Route::get('/home', 'Controller@index');
 
 Route::get('/project/showall/{param}', 'ProjectController@showall');
 Route::get('/users/showall/{param}', 'UsersController@showall');
-
-<<<<<<< HEAD
-// Route::get('/project/showall/{id}', 'ProjectController@chooseProject');
-=======
-Route::get('/project/showall/{id}', 'ProjectController@chooseProject');
-
+Route::post('users/create/engineer', 'UsersController@createengineer');
 Route::post('/project/contactus', 'ProjectController@contactUs');
->>>>>>> 289364cfa5787cfabbe59001b2d0199ec7d502a4
