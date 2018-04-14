@@ -46,7 +46,6 @@ class ProjectController extends Controller
     public function showall()
     {
         $allProjects = Projects::get();
-        // dd($allProjects);
         return view('project_showall', [
             'projects' => $allProjects
         ]);

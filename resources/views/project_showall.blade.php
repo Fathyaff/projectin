@@ -15,9 +15,11 @@
             <thead>
                 <tr>
                     <td>Nama Project</td>  
-                    <td>Deskripsi</td>  
+                    <td>Deskripsi</td>
+                    <td>Fitur</td>  
                     <td>Durasi</td>  
-                    <td>Harga</td>  
+                    <td>Harga</td>
+                    <td>Pilih</td>  
                 </tr>
             </thead>
             <tbody>
@@ -25,8 +27,14 @@
                 <tr>
                     <td>{{ $project->nama }}</td> <!-- Nama -->
                     <td>{{ $project->deskripsi }}</td> <!-- Deskripsi -->
+                    <td> <!-- List Fitur -->
+                    @foreach ($project->listFitur as $fitur)
+                        <li>{{ $fitur->nama_fitur }}</li>
+                    @endforeach
+                    </td> 
                     <td>{{ $project->duration }} Bulan</td> <!-- Durasi -->
                     <td>{{ $project->min_harga }} - {{ $project->max_harga }}</td> <!-- Harga -->
+                    <td><button>Apply</button></td> <!-- Harga -->
                 </tr>
                 @endforeach
             </tbody>
