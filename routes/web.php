@@ -20,3 +20,5 @@ Route::get('/home', 'Controller@index');
 Route::get('/project/showall', 'ProjectController@showall');
 
 Route::get('/project/showall/{id}', 'ProjectController@chooseProject');
+
+Route::post('/project/contactus', 'ProjectController@contactUs');
