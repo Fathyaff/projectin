@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('footer');
 });
+
+Route::get('/home', 'Controller@index');
+
+Route::get('/project/showall', 'ProjectController@showall');
