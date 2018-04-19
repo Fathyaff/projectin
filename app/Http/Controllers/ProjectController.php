@@ -49,9 +49,7 @@ class ProjectController extends Controller
     public function showall($param)
     {
         $projects = Projects::where('jenis', $param)->get();
-        // return view('welcome.projectlist')->with(compact('projects'));
         return response()->json($projects);
-        // return Datatables::of($projects);
     }
     
     public function chooseProject($id)
@@ -66,17 +64,6 @@ class ProjectController extends Controller
 		return redirect('/project/showall');
 	}
 
-    public function contactUs(Request $request)
-    {
-        $contact_us = new ContactUs;
-		$contact_us->name = Input::get('name');
-		$contact_us->email = Input::get('email');
-		$contact_us->phone = Input::get('phone');
-		$contact_us->message = Input::get('message');
-        $contact_us->save();
-        
-        return redirect('/');
-    }
     /**
      * Display the specified resource.
      *
