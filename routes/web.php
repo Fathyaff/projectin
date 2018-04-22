@@ -24,8 +24,14 @@ Route::get('/join-us', 'PageController@joinEngineer');
 Route::get('/project/showall/{param}', 'ProjectController@showall');
 Route::get('/users/showall/{param}', 'UsersController@showall');
 
+// Create Project
+Route::post('/project/create', 'ProjectController@createProject');
 
+// Join Engineer
 Route::post('/users/create/engineer', 'UsersController@createEngineer');
+
+// Apply Project
+Route::post('/project/apply', 'ProjectController@chooseProject');
 
 // Send Feedback
 Route::post('/contact-us', 'PageController@sendFeedback');

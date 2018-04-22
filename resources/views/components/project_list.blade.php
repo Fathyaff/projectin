@@ -72,7 +72,7 @@
                   <td width="80">Pilih</td>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="contentBigProject" class="contentTable">
               </tbody>
             </table>
           </div>
@@ -110,7 +110,7 @@
                   <td width="80">Pilih</td>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="contentMediumProject" class="contentTable">
               </tbody>
             </table>
           </div>
@@ -148,8 +148,7 @@
                   <td width="80">Pilih</td>
                 </tr>
               </thead>
-              <tbody>
-
+              <tbody id="contentSmallProject" class="contentTable">
               </tbody>
             </table>
           </div>

@@ -44,7 +44,6 @@
           <div class="control-group">
             <div class="form-group floating-label-form-group controls mb-0 pb-2">
               <label>Skills</label>
-              <!-- <input class="form-control" name="keterampilan" id="keterampilan" type="tel" placeholder="University" required="required" data-validation-required-message="Please enter your University."> -->
               <select class="form-control" name="skills[]" id="skills" multiple="multiple" placeholder="skills" required="required" data-validation-required-message="Please select your skills.">
                 @foreach ($skills as $skill)
                   <option value="{{ $skill->nama_skill }}">{{ $skill->nama_skill }}</option>

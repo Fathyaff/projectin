@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\SeSkills;
+use App\ListFitur;
 use App\ContactUs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -16,7 +17,10 @@ class PageController extends Controller
 
     public function createProject()
     {
-        return view('create_project');
+        $listFitur = ListFitur::select('nama_fitur')->distinct()->get();
+        return view('create_project', [
+            'features' => $listFitur
+        ]);
     }
 
     public function joinEngineer()

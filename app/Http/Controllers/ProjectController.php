@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Projects;
+use App\ListFitur;
 use App\Candidates;
 use App\ContactUs;
 use Illuminate\Http\Request;
@@ -25,9 +26,33 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createProject(Request $request)
     {
-        //
+        $project = new Projects;
+        $project->id_po ="1"; // Hardcode
+        $project->nama = Input::get('projectName');
+        $project->min_harga = Input::get('minHarga');
+        $project->max_harga = Input::get('maxHarga');
+        if ($project->min_harga < "10000000") {
+            $project->jenis = "Small";
+        } elseif ($project->min_harga < "20000000") {
+            $project->jenis = "Medium";
+        } else {
+            $project->jenis = "Big";
+        }
+        $project->duration = Input::get('duration');
+        $project->desain = (Input::get('design')) ? 1 : 0 ;
+        $project->deskripsi = Input::get('deskripsi');
+        $project->save();
+
+        for ($i=0; $i < sizeof(Input::get('features')); $i++) { 
+            $fitur = new ListFitur;
+            $fitur->id_project = $project->id;
+            $fitur->nama_fitur = Input::get('features')[$i];
+            $fitur->save();
+        }
+
+        return redirect('/#portfolio');
     }
 
     /**
@@ -52,16 +77,30 @@ class ProjectController extends Controller
         return response()->json($projects);
     }
     
-    public function chooseProject($id)
-	{
-		$candidates= new Candidates;
-		$candidates->id_project = $id;
-		$candidates->id_user = '25';
-		$candidates->status = 'Applied';
-		$candidates->save();
-		dd(compact('candidates'));
+    // public function chooseProject($id)
+	// {
+	// 	$candidates= new Candidates;
+	// 	$candidates->id_project = $id;
+	// 	$candidates->id_user = '25';
+	// 	$candidates->status = 'Applied';
+	// 	$candidates->save();
+	// 	dd(compact('candidates'));
 		
-		return redirect('/project/showall');
+	// 	return redirect('/project/showall');
+    // }
+    
+    public function chooseProject(Request $request)
+	{
+        $projectSelected = Projects::where('jenis', Input::get('jenis'))->get();
+
+        $candidate = new Candidates;
+        $candidate->id_project = $projectSelected[(int) Input::get('index')]->id;
+        $candidate->id_user = Input::get('user');
+        $candidate->status = 'Applied';
+        $saved = $candidate->save();
+
+        $result = array('result' => $saved);
+        return response()->json($result);
 	}
 
     /**

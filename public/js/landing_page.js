@@ -18,6 +18,44 @@ $(document).ready(function () {
         getAllEngineers("Beginner");
     })
 
+    $('.contentTable').on('click', '.apply_project', function () {
+        var selected = $(this).closest('tr');
+        var jenisProject;
+        if($(this).closest('tbody').attr('id').includes("Big")) {
+            jenisProject = "Big";
+        } else if($(this).closest('tbody').attr('id').includes("Medium")) {
+            jenisProject = "Medium";
+        } else if ($(this).closest('tbody').attr('id').includes("Small")) {
+            jenisProject = "Small";
+        }
+        // ID USER LOGIN MASIH HARDCODE
+        applyProject('7', jenisProject, selected.index());
+    })
+
+    function applyProject(userLogin, jenisProject, projectIndex) {
+        $.ajax({
+            type: "POST",
+            url: '/project/apply',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            dataType: "JSON",
+            data: {
+                'user'  : userLogin,
+                'jenis' : jenisProject,
+                'index' : projectIndex
+            },
+            success: function (data) {
+                console.log(data);
+                alert("Success");
+            },
+            error: function (err) {
+                console.log(err);
+                alert("Failed");
+            }
+        });
+    }
+
     function getAllProjects(param) {
         $.ajax({
             type: "GET",
@@ -48,8 +86,7 @@ $(document).ready(function () {
                         projectList += "<td>" + data[i].deskripsi + "</td>";
                         projectList += "<td>" + data[i].duration + "</td>";
                         projectList += "<td>" + data[i].min_harga + " - " + data[i].max_harga + "</td>";
-                        projectList += '<td><button value="' + data[i].id + '"' +
-                            'id="apply_project" class="waves-effect waves-light btn blue-grey darken-4 apply_projects">Apply</button>' +
+                        projectList += '<td><button value="' + data[i].id + '" class="apply_project waves-effect waves-light btn blue-grey darken-4 apply_projects">Apply</button>' +
                             '</td>';
 
                         projectList += "</tr>";

@@ -22,29 +22,57 @@
           {{ csrf_field() }}
           <div class="control-group">
             <div class="form-group floating-label-form-group controls mb-0 pb-2">
-              <label>Name</label>
-              <input class="form-control" name="name" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
+              <label>Project Name</label>
+              <input class="form-control" name="projectName" id="projectName" type="text" placeholder="Project Name" required="required" data-validation-required-message="Please enter project name.">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls mb-0 pb-2">
-              <label>Email Address</label>
-              <input class="form-control" name="email" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address.">
+              <label>Duration</label>
+              <input class="form-control" name="duration" id="duration" type="number" onkeydown="return false" placeholder="Duration" required="required" data-validation-required-message="Please enter project duration.">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls mb-0 pb-2">
-              <label>Phone Number</label>
-              <input class="form-control" name="phone" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number.">
+              <label>Desain</label>
+              <!-- <input class="form-control" name="design" id="design" type="tel" placeholder="Desain" required="required" data-validation-required-message="Please enter is this project already have design asset."> -->
+              <input type="radio" name="design" id="design" value="false"/>Already have
+              <input type="radio" name="design" id="design" value="true"/>Need Designer
+              <input type="radio" name="design" id="design" value="false"/>Doesnt Need
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls mb-0 pb-2">
-              <label>Message</label>
-              <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
+              <label>Deskripsi</label>
+              <textarea class="form-control" name="deskripsi" id="deskripsi" rows="5" placeholder="Deskripsi" required="required" data-validation-required-message="Please enter project description."></textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+              <label>Minimum Budget</label>
+              <input class="form-control" name="minHarga" id="minHarga" type="number" step="250000" onkeydown="return false" placeholder="Minimum Budget" required="required" data-validation-required-message="Please enter your minimim bugdet.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+              <label>Maximum Budget</label>
+              <input class="form-control" name="maxHarga" id="maxHarga" type="number" step="250000" onkeydown="return false" placeholder="Maximum Budget" required="required" data-validation-required-message="Please enter your maximum budget.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+              <label>List Features</label>
+              <select class="form-control" name="features[]" id="features" multiple="multiple" placeholder="List Features" required="required" data-validation-required-message="Please select your project features.">
+                @foreach ($features as $feature)
+                  <option value="{{ $feature->nama_fitur }}">{{ $feature->nama_fitur }}</option>
+                @endforeach
+              </select>
               <p class="help-block text-danger"></p>
             </div>
           </div>
