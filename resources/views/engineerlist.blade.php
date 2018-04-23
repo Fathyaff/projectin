@@ -6,7 +6,7 @@
          <div class="row">
             <h2 class="col-md-9 text-right text-uppercase text-secondary mb-0">Software Engineer</h2>
             <div class="col-md-3 text-right">
-                <a class="btn btn-primary btn-lg rounded-pill" href="/join-us">
+                <a class="btn btn-primary btn-lg rounded-pill" href="/projectin/join-us">
                 <i class="fa fa-plus"></i> Join</a>
             </div>
         </div> 
