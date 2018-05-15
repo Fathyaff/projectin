@@ -11,20 +11,28 @@
 |
 */
 
-Route::get('/', function () {
-    return view('footer');
-});
+// Landing page
+Route::get('/', 'PageController@index');
 
-Route::get('/create-project', function () {
-    return view('createproject');
-});
-Route::get('/join-us', function () {
-    return view('joinus');
-});
+// Page to create project
+Route::get('/create-project', 'PageController@createProject');
 
-Route::get('/home', 'Controller@index');
+// Page to regis engineer
+Route::get('/join-us', 'PageController@joinEngineer');
 
+// return JSON project & users
 Route::get('/project/showall/{param}', 'ProjectController@showall');
 Route::get('/users/showall/{param}', 'UsersController@showall');
-Route::post('/projectin/users/create/engineer', 'UsersController@createengineer');
 Route::post('/project/contactus', 'ProjectController@contactUs');
+
+// Create Project
+Route::post('/project/create', 'ProjectController@createProject');
+
+// Join Engineer
+Route::post('/users/create/engineer', 'UsersController@createEngineer');
+
+// Apply Project
+Route::post('/project/apply', 'ProjectController@chooseProject');
+
+// Send Feedback
+Route::post('/contact-us', 'PageController@sendFeedback');

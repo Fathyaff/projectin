@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Users;
+use App\SeSkills;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -23,15 +25,21 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function createengineer(Request $request)
+    public function createEngineer(Request $request)
     {
-        //
         $join_us = new Users;
         $join_us->nama = Input::get('name');
         $join_us->email = Input::get('email');
         $join_us->univ = Input::get('univ');
         $join_us->role = 'Mahasiswa';
         $join_us->save();
+
+        for ($i=0; $i < sizeof(Input::get('skills')); $i++) { 
+            $userSkill = new SeSkills;
+            $userSkill->id_users = $join_us->id;
+            $userSkill->nama_skill = Input::get('skills')[$i];
+            $userSkill->save();
+        }
 
         return redirect('/#portfolio');
     }
@@ -54,10 +62,17 @@ class UsersController extends Controller
      */
     public function showall($param)
     {
-        $engineers = Users::where('role', 'Mahasiswa')->get();
-        // return view('welcome.projectlist')->with(compact('projects'));
-        return response()->json($engineers);
-        // return Datatables::of($projects);
+        $engineers = Users::where('role', 'Mahasiswa')
+                    ->join('se_skills', 'users.id', '=', 'se_skills.id_users')
+                    ->select('users.nama', 'users.univ', 
+                    DB::raw('(CASE WHEN count(se_skills.id_users) <= 3 THEN "Beginner" 
+                        WHEN count(se_skills.id_users) <= 6 THEN "Average"
+                        WHEN count(se_skills.id_users) > 6 THEN "Expert"
+                        END) AS category'))
+                    ->groupBy('se_skills.id_users')
+                    ->get();
+        $data = $engineers->where('category', '=', $param)->toArray();
+        return response()->json($data);
     }
 
     /**
@@ -66,9 +81,10 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function skills()
     {
-        //
+        $skills = SeSkills::select('nama_skill')->distinct()->get();
+        return response()->json($skills);
     }
 
     /**

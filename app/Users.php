@@ -12,7 +12,13 @@ class Users extends Model
      * @var string
      */
     protected $table = 'users';
-    protected $fillable = ['id', 'nama', 'univ', 'email', 'role', 'updated_at'];
+    protected $fillable = ['nama', 'univ', 'email', 'role', 'updated_at'];
 
-
+    /* 
+     * Relation One to Many with se skills
+     */
+    public function seSkills()
+    {
+        return $this->hasMany('App\SeSkills', 'id_users', 'id');
+    }
 }
